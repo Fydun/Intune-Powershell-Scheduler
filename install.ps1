@@ -40,7 +40,7 @@ Copy-Item -Path "$PSScriptRoot\$FileToCopy" -Destination "$Destination\$FileToCo
 ###Creating the schedule###
 "Creating task action" | Out-File $LogFile -Append
 #Set the action
-$action = New-ScheduledTaskAction -Execute "C:\Scripts\KompassetSlettFiler\removeFiles.ps1"
+$action = New-ScheduledTaskAction -Execute "$env:SystemDrive\scripts\KompassetSlettFiler\removeFiles.ps1"
 $action | Out-File $LogFile -Append
 
 #Set a trigger
